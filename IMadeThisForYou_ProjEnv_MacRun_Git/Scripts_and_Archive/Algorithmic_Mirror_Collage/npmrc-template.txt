@@ -1,0 +1,9 @@
+; Optional: keeps npm's package cache inside the project folder
+; instead of the Windows user-profile AppData folder, so nothing
+; from this install lives outside the project directory.
+;
+; To use: copy this file into
+;   Scripts_and_Archive/Algorithmic_Mirror_Collage/
+; and rename it to exactly ".npmrc" (no ".txt", starts with a dot).
+
+cache=./.npm-cache

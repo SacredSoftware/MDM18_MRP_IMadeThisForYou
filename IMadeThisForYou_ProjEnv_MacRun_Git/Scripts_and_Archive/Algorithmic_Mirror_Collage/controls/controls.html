@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self' file:; script-src 'self' file: 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+  </head>
+  <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      @font-face {
+        font-family: 'CustomFont';
+        src: url('Perfect_DOS_VGA_437.ttf') format('truetype');
+      }
+      body {
+        background: #111;
+        overflow: hidden;
+        font-family: 'Courier New', monospace;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      #treemap-container {
+        flex: 1;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        min-height: 0;
+      }
+      #header-bar {
+        padding: 16px 20px;
+        background: #212121;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #header-title {
+        color: #00d0ff;
+        font-family: 'CustomFont', 'Courier New', monospace;
+        font-size: 64px;
+        letter-spacing: 0.1em;
+        font-weight: normal;
+        animation: glow-pulse 2.5s ease-in-out infinite;
+      }
+      @keyframes glow-pulse {
+        0%, 100% {
+          text-shadow:
+            0 0 4px rgba(85, 187, 255, 0.4),
+            0 0 10px rgba(85, 187, 255, 0.2);
+        }
+        50% {
+          text-shadow:
+            0 0 12px rgba(85, 187, 255, 0.9),
+            0 0 24px rgba(85, 187, 255, 0.5),
+            0 0 40px rgba(85, 187, 255, 0.3);
+        }
+      }
+      #density-label { 
+        color: #888;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      #density-bar {
+        padding: 12px 16px;
+        background: #1a1a1a;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        display: flex;
+        justify-content: flex-end;
+      }
+      #density-readout {
+        color:#5bf;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        white-space: nowrap;
+        min-width: 110px;
+        text-align: right;
+      }
+  </style>
+  <body>
+    <div id ="header-bar">
+      <h1 id="header-title">I am...</h1>
+    </div>
+    <div id="treemap-container">
+      <canvas id="treemap-canvas"></canvas>
+    </div>
+    <script src="../libs/p5.min.js"></script>
+    <script src="controls.js"></script>
+  </body>
+</html>
